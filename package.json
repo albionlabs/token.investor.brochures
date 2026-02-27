@@ -23,7 +23,7 @@
 	"sideEffects": false,
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/albionlabs/brochure-templates.git"
+		"url": "git+https://github.com/albionlabs/token.investor.brochures.git"
 	},
 	"scripts": {
 		"dev": "vite dev",
