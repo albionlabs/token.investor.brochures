@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Partner } from '$lib/types';
+	import type { Partner } from '../types.js';
 
 	interface Props {
 		title: string;

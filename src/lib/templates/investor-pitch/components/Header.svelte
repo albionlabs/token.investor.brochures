@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { KeyMetric } from '$lib/types';
+	import type { KeyMetric } from '../types.js';
 
 	interface Props {
 		companyName: string;

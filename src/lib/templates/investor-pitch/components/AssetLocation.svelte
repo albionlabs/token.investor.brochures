@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { AssetLabel, AssetStat } from '$lib/types';
+	import type { AssetLabel, AssetStat } from '../types.js';
 
 	interface Props {
 		title: string;

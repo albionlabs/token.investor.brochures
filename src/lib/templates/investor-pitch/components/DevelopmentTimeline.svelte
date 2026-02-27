@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TimelineMilestone } from '$lib/types';
+	import type { TimelineMilestone } from '../types.js';
 
 	interface Props {
 		title: string;

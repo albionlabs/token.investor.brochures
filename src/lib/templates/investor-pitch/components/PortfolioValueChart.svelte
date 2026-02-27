@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PortfolioAsset, DevProbability } from '$lib/types';
+	import type { PortfolioAsset, DevProbability } from '../types.js';
 
 	interface Props {
 		title: string;

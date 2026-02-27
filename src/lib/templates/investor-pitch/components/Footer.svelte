@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { FooterItem } from '$lib/types';
+	import type { FooterItem } from '../types.js';
 
 	interface Props {
 		items: FooterItem[];

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ValueProposition } from '$lib/types';
+	import type { ValueProposition } from '../types.js';
 
 	interface Props {
 		title: string;

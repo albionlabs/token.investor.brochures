@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { InvestorPitch } from '$lib/types';
+	import type { InvestorPitch } from '../types.js';
 
 	interface Props {
 		data: InvestorPitch['priceSensitivity'];
