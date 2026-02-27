@@ -1,6 +1,6 @@
 {
 	"name": "@albionlabs/brochure-templates",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"type": "module",
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
