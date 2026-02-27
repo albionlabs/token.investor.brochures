@@ -1,0 +1,159 @@
+{
+	"company": {
+		"name": "ORCADIAN ENERGY PLC",
+		"subtitle": "AIM: ORCA | UK North Sea Oil & Gas Development | Carried Interest Strategy"
+	},
+	"keyMetrics": [
+		{ "label": "MARKET CAP", "value": "$13m", "highlight": false },
+		{ "label": "RISKED NAV", "value": "$43m", "highlight": false },
+		{ "label": "NAV DISCOUNT", "value": "70%", "highlight": true },
+		{ "label": "CARRIED VALUE", "value": "77%", "highlight": true },
+		{ "label": "FIRST PRODUCTION", "value": "2028", "highlight": false },
+		{ "label": "NET RESOURCES", "value": "340 MMboe", "highlight": false }
+	],
+	"investmentThesis": {
+		"title": "INVESTMENT THESIS",
+		"content": "Carried exposure to <strong>8 UK North Sea assets</strong> at 70% discount to risked NAV. Two flagship projects (Pilot, Earlham) fully funded by partners through first production—zero Orcadian capital required."
+	},
+	"valuePropositions": {
+		"title": "WHY ORCADIAN?",
+		"items": [
+			{ "text": "<strong>Carried Interest</strong> — Partners fund 77% of portfolio value" },
+			{ "text": "<strong>Proven Technology</strong> — Pilot uses Captain-validated polymer flood" },
+			{ "text": "<strong>Near-Term Catalyst</strong> — Earlham first gas targeted 2028" },
+			{ "text": "<strong>ESG Angle</strong> — Earlham captures 95%+ of CO₂ emissions" }
+		]
+	},
+	"assetLocation": {
+		"title": "ASSET LOCATION",
+		"mapDescription": "UK Continental Shelf showing asset locations",
+		"assetLabels": [
+			{ "name": "Pilot", "x": 72, "y": 25 },
+			{ "name": "Elke", "x": 68, "y": 38 },
+			{ "name": "Fynn", "x": 58, "y": 55 },
+			{ "name": "Earlham", "x": 62, "y": 68 }
+		],
+		"stats": [
+			{ "label": "Oil Assets", "value": "5", "description": "heavy & light" },
+			{ "label": "Gas Assets", "value": "3", "description": "with CCS" },
+			{ "label": "Partners", "value": "4", "description": "Ping, MLCP, Serica" },
+			{ "label": "Licences", "value": "5", "description": "UKCS blocks" }
+		]
+	},
+	"portfolioValue": {
+		"title": "RISKED PORTFOLIO VALUE BY ASSET",
+		"assets": [
+			{
+				"name": "Pilot",
+				"bars": [
+					{ "value": 19.5, "color": "#0d9488", "label": "Pilot" },
+					{ "value": 15.0, "color": "#14b8a6", "label": "Earlham" }
+				]
+			},
+			{
+				"name": "Elke/Narwhal",
+				"bars": [
+					{ "value": 4.2, "color": "#3b82f6", "label": "Elke/Narwhal" },
+					{ "value": 3.0, "color": "#ef4444", "label": "Lowlander" }
+				]
+			},
+			{
+				"name": "Orwell",
+				"bars": [
+					{ "value": 0.8, "color": "#f59e0b", "label": "Orwell" }
+				]
+			}
+		],
+		"maxValue": 20,
+		"gridLines": [0, 5, 10, 15, 20],
+		"developmentProbabilities": [
+			{ "name": "Earlham", "percentage": 40, "color": "#14b8a6" },
+			{ "name": "Pilot", "percentage": 50, "color": "#0d9488" },
+			{ "name": "Lowlander", "percentage": 30, "color": "#ef4444" },
+			{ "name": "Elke/Narwhal", "percentage": 27, "color": "#3b82f6" }
+		]
+	},
+	"priceSensitivity": {
+		"title": "OIL PRICE SENSITIVITY — PORTFOLIO NPV",
+		"chart": {
+			"xAxisLabel": "Brent",
+			"yAxisLabel": "Portfolio NPV ($m)",
+			"xRange": [40, 100],
+			"yRange": [20, 60],
+			"xStep": 5,
+			"yStep": 10,
+			"dataPoints": [
+				{ "x": 40, "y": 37 },
+				{ "x": 45, "y": 38 },
+				{ "x": 50, "y": 40 },
+				{ "x": 55, "y": 41.5 },
+				{ "x": 60, "y": 42.5 },
+				{ "x": 65, "y": 44 },
+				{ "x": 70, "y": 45.5 },
+				{ "x": 75, "y": 46.5 },
+				{ "x": 80, "y": 48 },
+				{ "x": 85, "y": 49 },
+				{ "x": 90, "y": 50 },
+				{ "x": 95, "y": 51.5 },
+				{ "x": 100, "y": 53 }
+			],
+			"baseCaseX": 65,
+			"baseCaseLabel": "Base"
+		},
+		"table": {
+			"columns": [
+				{ "key": "brent", "label": "Brent" },
+				{ "key": "portfolioNPV", "label": "Portfolio NPV", "highlightColor": "#10b981" },
+				{ "key": "pilotNPV", "label": "Pilot NPV" },
+				{ "key": "navDiscount", "label": "NAV Discount", "highlightColor": "#10b981" },
+				{ "key": "upside", "label": "Upside", "highlightColor": "#10b981" }
+			],
+			"rows": [
+				{ "brent": "$40", "portfolioNPV": "$37m", "pilotNPV": "$11m", "navDiscount": "65%", "upside": "185%" },
+				{ "brent": "$50", "portfolioNPV": "$40m", "pilotNPV": "$13m", "navDiscount": "68%", "upside": "208%" },
+				{ "brent": "$65", "portfolioNPV": "$44m", "pilotNPV": "$15m", "navDiscount": "70%", "upside": "238%" },
+				{ "brent": "$80", "portfolioNPV": "$48m", "pilotNPV": "$17m", "navDiscount": "73%", "upside": "269%" },
+				{ "brent": "$100", "portfolioNPV": "$53m", "pilotNPV": "$21m", "navDiscount": "75%", "upside": "308%" }
+			],
+			"highlightRowIndex": 2
+		},
+		"footnote": "Gas assets (Earlham, Orwell) less sensitive to oil; valued at power station economics"
+	},
+	"developmentTimeline": {
+		"title": "DEVELOPMENT TIMELINE",
+		"milestones": [
+			{ "year": "2026", "label": "Earlham CSR", "color": "#10b981" },
+			{ "year": "2027", "label": "P2482 Decision", "color": "#14b8a6" },
+			{ "year": "2028", "label": "Earlham 1st Gas", "color": "#10b981" },
+			{ "year": "2031", "label": "Pilot 1st Oil", "color": "#3b82f6" }
+		]
+	},
+	"keyPartners": {
+		"title": "KEY PARTNERS",
+		"partners": [
+			{ "name": "Ping Petroleum", "description": "Pilot operator (Malaysia)" },
+			{ "name": "MLCP", "description": "Earlham JV (Power/CCS)" },
+			{ "name": "Serica Energy", "description": "Fynn-Beauly operator" },
+			{ "name": "Triangle Energy", "description": "Glenlough JV (Australia)" }
+		]
+	},
+	"keyRisks": {
+		"title": "KEY RISKS",
+		"risks": [
+			"Partner execution",
+			"Project financing",
+			"UK fiscal regime (EPL)",
+			"Development delays",
+			"Exploration failure (Clover, Glenlough not valued)"
+		]
+	},
+	"footer": {
+		"items": [
+			{ "label": "AIM", "value": "ORCA" },
+			{ "label": "Sector", "value": "Oil & Gas E&P" },
+			{ "label": "Base Case", "value": "$65/bbl Brent, 80p/therm" },
+			{ "label": "Valuation", "value": "Risked NPV₁₅" }
+		],
+		"disclaimer": "This summary is for informational purposes only and does not constitute investment advice. January 2026."
+	}
+}

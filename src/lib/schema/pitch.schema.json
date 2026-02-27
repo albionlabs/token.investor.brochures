@@ -1,0 +1,360 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://albionlabs.com/schemas/investor-pitch.json",
+	"title": "Investor Pitch",
+	"description": "Standardised data schema for a single-page investor pitch summary",
+	"type": "object",
+	"required": [
+		"company",
+		"keyMetrics",
+		"investmentThesis",
+		"valuePropositions",
+		"assetLocation",
+		"portfolioValue",
+		"priceSensitivity",
+		"developmentTimeline",
+		"keyPartners",
+		"keyRisks",
+		"footer"
+	],
+	"properties": {
+		"company": {
+			"type": "object",
+			"required": ["name", "subtitle"],
+			"properties": {
+				"name": {
+					"type": "string",
+					"description": "Company name displayed as the page heading"
+				},
+				"subtitle": {
+					"type": "string",
+					"description": "Ticker, sector, and strategy tagline"
+				}
+			}
+		},
+		"keyMetrics": {
+			"type": "array",
+			"description": "Top-level KPI pills displayed beneath the header",
+			"items": {
+				"type": "object",
+				"required": ["label", "value"],
+				"properties": {
+					"label": {
+						"type": "string",
+						"description": "Metric label (e.g. MARKET CAP)"
+					},
+					"value": {
+						"type": "string",
+						"description": "Formatted display value (e.g. $13m)"
+					},
+					"highlight": {
+						"type": "boolean",
+						"default": false,
+						"description": "Whether to display the value in accent colour"
+					}
+				}
+			}
+		},
+		"investmentThesis": {
+			"type": "object",
+			"required": ["title", "content"],
+			"properties": {
+				"title": {
+					"type": "string",
+					"description": "Section heading"
+				},
+				"content": {
+					"type": "string",
+					"description": "HTML-enabled thesis paragraph. Use <strong> for emphasis."
+				}
+			}
+		},
+		"valuePropositions": {
+			"type": "object",
+			"required": ["title", "items"],
+			"properties": {
+				"title": {
+					"type": "string",
+					"description": "Section heading (e.g. WHY COMPANY?)"
+				},
+				"items": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"required": ["text"],
+						"properties": {
+							"text": {
+								"type": "string",
+								"description": "HTML-enabled bullet text. Use <strong> for the lead phrase."
+							}
+						}
+					}
+				}
+			}
+		},
+		"assetLocation": {
+			"type": "object",
+			"required": ["title", "mapDescription", "assetLabels", "stats"],
+			"properties": {
+				"title": { "type": "string" },
+				"mapDescription": {
+					"type": "string",
+					"description": "Accessible description of the map"
+				},
+				"assetLabels": {
+					"type": "array",
+					"description": "Labelled points displayed on the map SVG",
+					"items": {
+						"type": "object",
+						"required": ["name", "x", "y"],
+						"properties": {
+							"name": { "type": "string" },
+							"x": {
+								"type": "number",
+								"description": "X position as percentage of SVG viewBox"
+							},
+							"y": {
+								"type": "number",
+								"description": "Y position as percentage of SVG viewBox"
+							}
+						}
+					}
+				},
+				"stats": {
+					"type": "array",
+					"description": "2x2 grid of key asset statistics",
+					"items": {
+						"type": "object",
+						"required": ["label", "value", "description"],
+						"properties": {
+							"label": { "type": "string" },
+							"value": { "type": "string" },
+							"description": { "type": "string" }
+						}
+					}
+				}
+			}
+		},
+		"portfolioValue": {
+			"type": "object",
+			"required": ["title", "assets", "maxValue", "gridLines", "developmentProbabilities"],
+			"properties": {
+				"title": { "type": "string" },
+				"assets": {
+					"type": "array",
+					"description": "Grouped horizontal bar chart data",
+					"items": {
+						"type": "object",
+						"required": ["name", "bars"],
+						"properties": {
+							"name": {
+								"type": "string",
+								"description": "Y-axis group label"
+							},
+							"bars": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"required": ["value", "color", "label"],
+									"properties": {
+										"value": {
+											"type": "number",
+											"description": "Bar width in chart units (e.g. millions)"
+										},
+										"color": {
+											"type": "string",
+											"description": "CSS colour for this bar segment"
+										},
+										"label": {
+											"type": "string",
+											"description": "Legend label for this bar"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"maxValue": {
+					"type": "number",
+					"description": "Maximum x-axis value"
+				},
+				"gridLines": {
+					"type": "array",
+					"items": { "type": "number" },
+					"description": "X-axis grid line positions"
+				},
+				"developmentProbabilities": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"required": ["name", "percentage", "color"],
+						"properties": {
+							"name": { "type": "string" },
+							"percentage": { "type": "number" },
+							"color": { "type": "string" }
+						}
+					}
+				}
+			}
+		},
+		"priceSensitivity": {
+			"type": "object",
+			"required": ["title", "chart", "table", "footnote"],
+			"properties": {
+				"title": { "type": "string" },
+				"chart": {
+					"type": "object",
+					"required": [
+						"xAxisLabel",
+						"yAxisLabel",
+						"xRange",
+						"yRange",
+						"xStep",
+						"yStep",
+						"dataPoints",
+						"baseCaseX",
+						"baseCaseLabel"
+					],
+					"properties": {
+						"xAxisLabel": { "type": "string" },
+						"yAxisLabel": { "type": "string" },
+						"xRange": {
+							"type": "array",
+							"items": { "type": "number" },
+							"minItems": 2,
+							"maxItems": 2
+						},
+						"yRange": {
+							"type": "array",
+							"items": { "type": "number" },
+							"minItems": 2,
+							"maxItems": 2
+						},
+						"xStep": { "type": "number" },
+						"yStep": { "type": "number" },
+						"dataPoints": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"required": ["x", "y"],
+								"properties": {
+									"x": { "type": "number" },
+									"y": { "type": "number" }
+								}
+							}
+						},
+						"baseCaseX": {
+							"type": "number",
+							"description": "X value where the base-case dashed line is drawn"
+						},
+						"baseCaseLabel": { "type": "string" }
+					}
+				},
+				"table": {
+					"type": "object",
+					"required": ["columns", "rows", "highlightRowIndex"],
+					"properties": {
+						"columns": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"required": ["key", "label"],
+								"properties": {
+									"key": { "type": "string" },
+									"label": { "type": "string" },
+									"highlightColor": {
+										"type": "string",
+										"description": "CSS colour for cell values in this column"
+									}
+								}
+							}
+						},
+						"rows": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"additionalProperties": { "type": "string" }
+							}
+						},
+						"highlightRowIndex": {
+							"type": "integer",
+							"description": "0-based index of the base-case row to bold"
+						}
+					}
+				},
+				"footnote": { "type": "string" }
+			}
+		},
+		"developmentTimeline": {
+			"type": "object",
+			"required": ["title", "milestones"],
+			"properties": {
+				"title": { "type": "string" },
+				"milestones": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"required": ["year", "label", "color"],
+						"properties": {
+							"year": { "type": "string" },
+							"label": { "type": "string" },
+							"color": {
+								"type": "string",
+								"description": "CSS colour for the milestone dot"
+							}
+						}
+					}
+				}
+			}
+		},
+		"keyPartners": {
+			"type": "object",
+			"required": ["title", "partners"],
+			"properties": {
+				"title": { "type": "string" },
+				"partners": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"required": ["name", "description"],
+						"properties": {
+							"name": { "type": "string" },
+							"description": { "type": "string" }
+						}
+					}
+				}
+			}
+		},
+		"keyRisks": {
+			"type": "object",
+			"required": ["title", "risks"],
+			"properties": {
+				"title": { "type": "string" },
+				"risks": {
+					"type": "array",
+					"items": { "type": "string" }
+				}
+			}
+		},
+		"footer": {
+			"type": "object",
+			"required": ["items", "disclaimer"],
+			"properties": {
+				"items": {
+					"type": "array",
+					"description": "Key metadata displayed as Label: Value pairs",
+					"items": {
+						"type": "object",
+						"required": ["label", "value"],
+						"properties": {
+							"label": { "type": "string" },
+							"value": { "type": "string" }
+						}
+					}
+				},
+				"disclaimer": { "type": "string" }
+			}
+		}
+	}
+}
